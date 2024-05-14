@@ -1,0 +1,10 @@
+[Unit]
+Description=Dirt simple SOCKS5 CONNECT proxy which binds a network interface
+After=network-online.target
+Requires=network-online.target
+
+[Service]
+ExecStart=/opt/socksy --bind-interface %i
+
+[Install]
+WantedBy=multi-user.target
